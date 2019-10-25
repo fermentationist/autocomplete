@@ -5,7 +5,7 @@ const Autocomplete = props => {
     console.log("props to Autocomplete:", props);
     const [state, setState] = useState({
         input: "",// user input
-        suggestions: props.suggestions,// passed suggestion list
+        // suggestions: props.suggestions,// passed suggestion list
         showSuggestions: false,
         filteredSuggestions: [],
         suggestionIndex: 0,// index of currently selected suggestion
@@ -25,9 +25,10 @@ const Autocomplete = props => {
             ...state,
             input: currentInput,
             showSuggestions: true,
-            filteredSuggestions: getSuggestions(state.suggestions, currentInput),
+            filteredSuggestions: getSuggestions(props.suggestions, currentInput),
             suggestionIndex: 0
         })
+        console.log("props.suggestions:", props.suggestions);
     }
     const getSuggestions = (suggestions, input) => {
         return suggestions

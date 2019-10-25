@@ -2,6 +2,7 @@ import React, {useState, useRef} from "react";
 import styled from "styled-components";
 
 const Autocomplete = props => {
+    console.log("props to Autocomplete:", props);
     const [state, setState] = useState({
         input: "",// user input
         suggestions: props.suggestions,// passed suggestion list
